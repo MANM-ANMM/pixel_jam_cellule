@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://ljoi6afxixoq"]
+[gd_scene load_steps=3 format=3 uid="uid://ljoi6afxixoq"]
 
-[ext_resource type="PackedScene" uid="uid://7esfjakyhu80" path="res://scene/puzzle/puzzle_1.tscn" id="1_3bxbc"]
+[ext_resource type="PackedScene" uid="uid://ds8r8k1wyujw0" path="res://scene/gardien.tscn" id="1_ggn0y"]
+[ext_resource type="Texture2D" uid="uid://c1ybe1syluq30" path="res://sprite/Fond.png" id="2_nf6qq"]
 
 [node name="main" type="Node2D"]
 
-[node name="puzzle1" parent="." instance=ExtResource("1_3bxbc")]
-position = Vector2(580, 387)
+[node name="gardien" parent="." instance=ExtResource("1_ggn0y")]
+position = Vector2(-190, 271)
+
+[node name="Fond" type="Sprite2D" parent="."]
+position = Vector2(578.116, 345.5)
+scale = Vector2(0.254356, 0.254356)
+texture = ExtResource("2_nf6qq")
+

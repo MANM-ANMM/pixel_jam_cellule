@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://ds8r8k1wyujw0"]
+
+[ext_resource type="Script" path="res://script/gardien.gd" id="1_dha6r"]
+[ext_resource type="Texture2D" uid="uid://dh5ff0ia5g0hs" path="res://sprite/garde/Garde1.png" id="1_gocd7"]
+[ext_resource type="Texture2D" uid="uid://c620diokbq6tf" path="res://sprite/garde/Garde2.png" id="2_yjcvd"]
+[ext_resource type="Texture2D" uid="uid://byqjs5ve7hr8y" path="res://sprite/garde/Garde3.png" id="3_8uicy"]
+[ext_resource type="Texture2D" uid="uid://ran25nk701qs" path="res://sprite/garde/Garde4.png" id="4_q5gxs"]
+[ext_resource type="Texture2D" uid="uid://bsvv5e8cnegpn" path="res://sprite/garde/Garde5.png" id="5_ufvqt"]
+[ext_resource type="Texture2D" uid="uid://dy3uim4fiumr1" path="res://sprite/garde/Garde6.png" id="6_1jqok"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3odh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gocd7")
+}, {
+"duration": 1.2,
+"texture": ExtResource("2_yjcvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8uicy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q5gxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ufvqt")
+}, {
+"duration": 0.8,
+"texture": ExtResource("6_1jqok")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="gardien" type="Node2D"]
+script = ExtResource("1_dha6r")
+
+[node name="Icon" type="AnimatedSprite2D" parent="."]
+position = Vector2(63, 0)
+sprite_frames = SubResource("SpriteFrames_a3odh")
+frame_progress = 0.0294082
