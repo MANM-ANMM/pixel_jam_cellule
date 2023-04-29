@@ -5,6 +5,7 @@ signal cell_clicked(Vector2i)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
+		print(get_entrees_tubes())
 		if event.pressed:
 			var cliked_cell = local_to_map(to_local(event.global_position))
 			emit_signal("cell_clicked", cliked_cell)
