@@ -7,3 +7,4 @@ func _ready():
 	level = levels_scenes.front().instantiate()
 
 	add_child(level)
+	level.position = $SpawnPuzzle.position
