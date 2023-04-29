@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7b45k7jqipx8"
-path="res://.godot/imported/tube_temp.png-12a4cf9944fe2cd593b7a8f0f505655f.ctex"
+uid="uid://bsvv5e8cnegpn"
+path="res://.godot/imported/Garde5.png-29d9b5f69062d40c05118624f8a89542.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/tube/tube_temp.png"
-dest_files=["res://.godot/imported/tube_temp.png-12a4cf9944fe2cd593b7a8f0f505655f.ctex"]
+source_file="res://sprite/garde/Garde5.png"
+dest_files=["res://.godot/imported/Garde5.png-29d9b5f69062d40c05118624f8a89542.ctex"]
 
 [params]
 
