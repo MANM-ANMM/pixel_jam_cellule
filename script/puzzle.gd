@@ -33,8 +33,17 @@ func test_chemin()->bool:
 	
 	return true
 
+var coord1 := Vector2i(-1,-1)
 func _on_tile_map_cell_clicked(pos:Vector2i):
-	print(test_chemin())
-	print(tile_map.get_entrees_tubes())
-	print(tile_map.get_sorties_tubes())
+	if not((pos.x>-1 and pos.x<taille.x) and (pos.y>-1 and pos.y <taille.y)):
+		coord1 = Vector2i(-1,-1)
+		return
+	print(pos)
+	if coord1 != Vector2i(-1,-1):
+		if tile_map.adjacence(pos,coord1):
+			tile_map.deplacer_cellule(coord1,pos)
+			coord1 = Vector2i(-1,-1)
+	elif tile_map.is_there_cell(pos):
+		coord1 = pos
+
 

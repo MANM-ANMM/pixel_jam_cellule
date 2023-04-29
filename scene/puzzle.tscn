@@ -9,6 +9,7 @@ script = ExtResource("1_mu6pg")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
+scale = Vector2(4, 4)
 tile_set = ExtResource("2_kxa6q")
 format = 2
 script = ExtResource("2_pmtmc")

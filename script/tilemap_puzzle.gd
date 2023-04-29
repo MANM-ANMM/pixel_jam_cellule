@@ -29,5 +29,18 @@ func get_entrees_sorties_helper(tab_id_couleur)->Array:
 		.filter(func(c): return tab_id_couleur.has(get_cell_atlas_coords(0, c))) \
 		.map(func(c): return {c : tab_id_couleur[get_cell_atlas_coords(0, c)]})
 
+func is_there_cell(coord:Vector2i)->bool:
+	var pre := get_cell_source_id(0, coord)
+	return(pre != -1)
+	
+func adjacence(source:Vector2i, dest:Vector2i)->bool:
+	return(abs(source.x-dest.x)+abs(source.y-dest.y) == 1)
+		
+func deplacer_cellule(source:Vector2i, dest:Vector2i):
+	if (is_there_cell(source)==true) and (is_there_cell(dest)==false):
+		set_cell(0,dest,0,get_cell_atlas_coords(0,source))
+		set_cell(0, source)
 
+		
 
+	
