@@ -2,17 +2,15 @@ extends Node2D
 
 
 @export var taille : Vector2
-var depart1 := Vector2i(0,0)
-var destination1 := Vector2i(3,0)
 @onready var tile_map :TileMapPuzzle= $TileMap
 
-func test_chemin()->bool:
+func test_chemin(depart:Vector2i,arriver:Vector2i)->bool:
 	var deplacement_prec := Enums.Direction.Droite 
-	var case_actuelle := depart1
+	var case_actuelle := depart
 	
 	while true:
 		print(case_actuelle)
-		if case_actuelle == destination1:
+		if case_actuelle == arriver:
 			break
 		
 		var dirs := tile_map.get_directions_tube(case_actuelle)
@@ -42,8 +40,26 @@ func _on_tile_map_cell_clicked(pos:Vector2i):
 	if coord1 != Vector2i(-1,-1):
 		if tile_map.adjacence(pos,coord1):
 			tile_map.deplacer_cellule(coord1,pos)
+			if tuyau_relier():
+				print("gagner")
 			coord1 = Vector2i(-1,-1)
+			
 	elif tile_map.is_there_cell(pos):
 		coord1 = pos
+		
+func chercher_arriver(couleur:int,tableau:Array)->int:
+	var i := 0
+	while tableau[i][1] != couleur:
+		i+=1
+	return(i)
 
-
+func tuyau_relier()->bool:
+	var tabdepart := tile_map.get_entrees_tubes()
+	var tabarriver := tile_map.get_sorties_tubes()
+	var idarr := -1
+	for dep in tabdepart :
+		idarr = chercher_arriver(dep[1],tabarriver)
+		if not(test_chemin(dep[0],tabarriver[idarr][0])):
+			return false
+	return true
+	
