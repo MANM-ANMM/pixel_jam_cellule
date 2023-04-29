@@ -12,7 +12,12 @@ config_version=5
 
 config/name="PixelJamCellule"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://sprite/icon.svg"
+
+[autoload]
+
+Enums="*res://script/enums.gd"
+Constantes="*res://script/constantes.gd"
 
 [rendering]
 
