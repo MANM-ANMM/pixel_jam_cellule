@@ -1,28 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3cfvrluqwcpy"]
+[gd_scene load_steps=4 format=3 uid="uid://c3cfvrluqwcpy"]
 
 [ext_resource type="Script" path="res://script/puzzle.gd" id="1_mu6pg"]
-[ext_resource type="Texture2D" uid="uid://d03vd7okbbdsa" path="res://sprite/tube/tube_sheet.png" id="2_pasnn"]
+[ext_resource type="TileSet" uid="uid://ds4fhlm3jey4j" path="res://tileset/puzzle.tres" id="2_kxa6q"]
 [ext_resource type="Script" path="res://script/tilemap_puzzle.gd" id="2_pmtmc"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipvx6"]
-texture = ExtResource("2_pasnn")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_8n4gv"]
-tile_size = Vector2i(32, 32)
-sources/1 = SubResource("TileSetAtlasSource_ipvx6")
 
 [node name="puzzle" type="Node2D"]
 script = ExtResource("1_mu6pg")
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_8n4gv")
+texture_filter = 1
+tile_set = ExtResource("2_kxa6q")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 65537, 1, 1, 65537, 0, 65536, 1, 1, 65537, 65537, 1)
 script = ExtResource("2_pmtmc")
 
 [connection signal="cell_clicked" from="TileMap" to="." method="_on_tile_map_cell_clicked"]

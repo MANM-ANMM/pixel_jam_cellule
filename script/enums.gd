@@ -1,5 +1,11 @@
 extends Node
 
+enum CouleurTube {
+	Rouge,
+	Vert,
+	Jaune
+}
+
 enum Direction {
 	Haut,
 	Bas,

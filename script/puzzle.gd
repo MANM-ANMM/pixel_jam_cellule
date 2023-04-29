@@ -15,7 +15,7 @@ func test_chemin()->bool:
 		if case_actuelle == destination1:
 			break
 		
-		var dirs := tile_map.get_entree_tube(case_actuelle)
+		var dirs := tile_map.get_directions_tube(case_actuelle)
 		print(dirs)
 		print(Enums.direction_oposee(deplacement_prec))
 		if not dirs.has(Enums.direction_oposee(deplacement_prec)):
@@ -35,4 +35,6 @@ func test_chemin()->bool:
 
 func _on_tile_map_cell_clicked(pos:Vector2i):
 	print(test_chemin())
+	print(tile_map.get_entrees_tubes())
+	print(tile_map.get_sorties_tubes())
 
