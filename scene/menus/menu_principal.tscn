@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnlof57piycj4"]
+[gd_scene load_steps=4 format=3 uid="uid://dju066jd31b83"]
 
 [ext_resource type="Theme" uid="uid://dnoaiid0bpill" path="res://scene/menus/theme.tres" id="1_7o4tv"]
-[ext_resource type="Script" path="res://script/menu_principal.gd" id="2_pdum7"]
+[ext_resource type="Script" path="res://script/menu/menu_principal.gd" id="2_fo5s4"]
 [ext_resource type="Texture2D" uid="uid://btgpc6axobct2" path="res://sprite/Title.png" id="3_3jj3j"]
 
-[node name="MenuPrincipal" type="Control" node_paths=PackedStringArray("jouer_button", "credit_button", "quitter_button")]
+[node name="MenuPrincipal" type="Control" node_paths=PackedStringArray("jouer_button", "credit_button", "quitter_button", "selection_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,10 +12,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7o4tv")
-script = ExtResource("2_pdum7")
+script = ExtResource("2_fo5s4")
 jouer_button = NodePath("VBoxContainer/Jouer")
 credit_button = NodePath("VBoxContainer/Credit")
 quitter_button = NodePath("VBoxContainer/Quitter")
+selection_button = NodePath("VBoxContainer/Selection")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -47,6 +48,10 @@ horizontal_alignment = 1
 [node name="Jouer" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Jouer"
+
+[node name="Selection" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Selection"
 
 [node name="Credit" type="Button" parent="VBoxContainer"]
 layout_mode = 2

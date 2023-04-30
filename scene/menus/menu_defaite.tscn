@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://chkluksq04r1w"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Theme" uid="uid://dnoaiid0bpill" path="res://scene/menus/theme.tres" id="1_t56fu"]
-[ext_resource type="Script" path="res://script/menu_defaite.gd" id="2_l8jfk"]
+[ext_resource type="Script" path="res://script/menu/menu_defaite.gd" id="2_l8jfk"]
 
 [node name="MenuDefaite" type="Control" node_paths=PackedStringArray("retour_button")]
 layout_mode = 3

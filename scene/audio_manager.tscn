@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhbtcroa2wxk6"]
+[gd_scene load_steps=6 format=3 uid="uid://dhbtcroa2wxk6"]
 
 [ext_resource type="Script" path="res://script/audio_manager.gd" id="1_50cx6"]
 [ext_resource type="AudioStream" uid="uid://i7qjuqqdktsv" path="res://son/vrai_dep_1.mp3" id="2_asbut"]
 [ext_resource type="AudioStream" uid="uid://doa8wuyge4bpd" path="res://son/vrai_dep_2.mp3" id="3_r1vf0"]
 [ext_resource type="AudioStream" uid="uid://blxfl715hgl7i" path="res://son/garde_qui_senerve.mp3" id="4_35s7l"]
+[ext_resource type="AudioStream" uid="uid://lvulyopraw01" path="res://musique/Box_15.mp3" id="5_ml46n"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_50cx6")
@@ -16,3 +17,7 @@ stream = ExtResource("3_r1vf0")
 
 [node name="Garde" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_35s7l")
+
+[node name="Musique" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ml46n")
+autoplay = true

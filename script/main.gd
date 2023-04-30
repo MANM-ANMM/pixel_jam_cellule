@@ -1,4 +1,5 @@
 extends Node2D
+class_name MainGame
 
 @export var levels_scenes:Array[PackedScene]
 var level:Node2D

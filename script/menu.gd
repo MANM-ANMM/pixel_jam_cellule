@@ -4,6 +4,7 @@ extends CanvasLayer
 @export var menu_credit : PackedScene
 @export var main_jeu : PackedScene
 @export var menu_defaite : PackedScene
+@export var menu_selection : PackedScene
 
 var scene_actuelle : Node
 
@@ -11,8 +12,10 @@ func _ready():
 	EventsBus.connect("menu_go_to_main", go_to_main)
 	EventsBus.connect("defaite", go_to_defaite)
 	EventsBus.connect("menu_go_to_credit", go_to_credit)
+	EventsBus.connect("menu_go_to_selection", go_to_selection)
 	EventsBus.connect("menu_start_game", start_game)
 	EventsBus.connect("menu_quit_game", quit_game)
+	EventsBus.connect("start_level", start_specific_level)
 	go_to_main()
 
 func decharger_menu():
@@ -38,8 +41,17 @@ func go_to_defaite():
 func go_to_credit():
 	charger_menu(menu_credit)
 
+func go_to_selection():
+	charger_menu(menu_selection)
+
 func start_game():
 	charger_menu(main_jeu)
+
+func start_specific_level(rang:int):
+	start_game()
+	if scene_actuelle is MainGame:
+		scene_actuelle.num_level = rang
+		scene_actuelle.start_level()
 
 func quit_game():
 	get_tree().quit()
