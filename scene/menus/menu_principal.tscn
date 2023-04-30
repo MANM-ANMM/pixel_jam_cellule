@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnlof57piycj4"]
+[gd_scene load_steps=4 format=3 uid="uid://dnlof57piycj4"]
 
 [ext_resource type="Theme" uid="uid://dnoaiid0bpill" path="res://scene/menus/theme.tres" id="1_7o4tv"]
 [ext_resource type="Script" path="res://script/menu_principal.gd" id="2_pdum7"]
+[ext_resource type="Texture2D" uid="uid://btgpc6axobct2" path="res://sprite/Title.png" id="3_3jj3j"]
 
 [node name="MenuPrincipal" type="Control" node_paths=PackedStringArray("jouer_button", "credit_button", "quitter_button")]
 layout_mode = 3
@@ -15,6 +16,17 @@ script = ExtResource("2_pdum7")
 jouer_button = NodePath("VBoxContainer/Jouer")
 credit_button = NodePath("VBoxContainer/Credit")
 quitter_button = NodePath("VBoxContainer/Quitter")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3jj3j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

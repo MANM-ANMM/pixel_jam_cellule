@@ -57,7 +57,7 @@ position = Vector2(1892, 315)
 position = Vector2(1043, 315)
 
 [node name="ArretGauche" type="Marker2D" parent="position_gardien"]
-position = Vector2(163, 315)
+position = Vector2(187, 315)
 
 [node name="ZoneGarde" type="Area2D" parent="."]
 

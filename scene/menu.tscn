@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3kri0i4fpqsh"]
+[gd_scene load_steps=6 format=3 uid="uid://c3kri0i4fpqsh"]
 
 [ext_resource type="Script" path="res://script/menu.gd" id="1_pl2vk"]
 [ext_resource type="PackedScene" uid="uid://dnlof57piycj4" path="res://scene/menus/menu_principal.tscn" id="2_yh5i6"]
 [ext_resource type="PackedScene" uid="uid://ljoi6afxixoq" path="res://scene/main.tscn" id="3_iujm8"]
+[ext_resource type="PackedScene" uid="uid://chkluksq04r1w" path="res://scene/menus/menu_defaite.tscn" id="4_fp88h"]
+[ext_resource type="PackedScene" uid="uid://dhbtcroa2wxk6" path="res://scene/audio_manager.tscn" id="4_ylacp"]
 
 [node name="menu" type="CanvasLayer"]
 script = ExtResource("1_pl2vk")
 menu_principal = ExtResource("2_yh5i6")
 main_jeu = ExtResource("3_iujm8")
+menu_defaite = ExtResource("4_fp88h")
+
+[node name="AudioManager" parent="." instance=ExtResource("4_ylacp")]
