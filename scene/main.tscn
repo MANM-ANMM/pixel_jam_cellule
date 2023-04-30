@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ljoi6afxixoq"]
 
-[ext_resource type="PackedScene" uid="uid://ds8r8k1wyujw0" path="res://scene/gardien.tscn" id="1_ggn0y"]
+[ext_resource type="PackedScene" path="res://scene/gardien.tscn" id="1_ggn0y"]
 [ext_resource type="Script" path="res://script/main.gd" id="1_sicp0"]
 [ext_resource type="PackedScene" uid="uid://sikjig3mki1w" path="res://scene/puzzle/puzzle_2.tscn" id="2_cjuih"]
 [ext_resource type="Texture2D" uid="uid://c1ybe1syluq30" path="res://sprite/Fond.png" id="2_nf6qq"]
-[ext_resource type="PackedScene" uid="uid://32j4t25b006a" path="res://scene/puzzle/puzzle_3.tscn" id="3_kx11m"]
+[ext_resource type="PackedScene" path="res://scene/puzzle/puzzle_3.tscn" id="3_kx11m"]
 [ext_resource type="Texture2D" uid="uid://cmnu6p8jrinjn" path="res://sprite/Grille.png" id="5_r47uq"]
 
 [node name="main" type="Node2D"]
