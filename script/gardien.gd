@@ -7,20 +7,19 @@ extends Node2D
 @onready var sprite := $Icon
 @onready var audio_player := $AudioStreamPlayer2D
 
+var tween:Tween
+
 func _ready():
 	timer.start(randf_range(5, 15))
+	EventsBus.connect("vu_par_le_garde", garde_mecontent)
 
-func avance_vers(depart:float, arrivee:float, temps:float):
-	position.x = depart
-	sprite.flip_h = depart > arrivee
-	sprite.play("default")
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(arrivee, position.y), temps)
-	tween.tween_callback(sprite.stop)
-
+func garde_mecontent():
+	sprite.stop()
+	audio_player.stop()
+	tween.stop()
 
 func _on_timer_timeout():
-	var tween = get_tree().create_tween()
+	tween = get_tree().create_tween()
 	var deb : Vector2 = get_node(points_extremes.pick_random()).position
 	var arrivee : Vector2 = get_node(points_extremes.pick_random()).position
 	var arret : Vector2 = get_node(points_arrets.pick_random()).position

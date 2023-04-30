@@ -3,11 +3,13 @@ extends CanvasLayer
 @export var menu_principal : PackedScene
 @export var menu_credit : PackedScene
 @export var main_jeu : PackedScene
+@export var menu_defaite : PackedScene
 
 var scene_actuelle : Node
 
 func _ready():
 	EventsBus.connect("menu_go_to_main", go_to_main)
+	EventsBus.connect("defaite", go_to_defaite)
 	EventsBus.connect("menu_go_to_credit", go_to_credit)
 	EventsBus.connect("menu_start_game", start_game)
 	EventsBus.connect("menu_quit_game", quit_game)
@@ -29,6 +31,9 @@ func charger_menu(scn:PackedScene):
 
 func go_to_main():
 	charger_menu(menu_principal)
+	
+func go_to_defaite():
+	charger_menu(menu_defaite)
 
 func go_to_credit():
 	charger_menu(menu_credit)

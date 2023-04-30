@@ -37,4 +37,10 @@ func unload_level():
 func piece_deplacee():
 	if zone_gardee.get_overlapping_areas().size()>0:
 		print("Perdu")
-		EventsBus.emit_signal("defaite")
+		level.defaite = true
+		
+		
+		var tween = get_tree().create_tween()
+		tween.tween_callback(func() : EventsBus.emit_signal("vu_par_le_garde"))		
+		tween.tween_interval(3)
+		tween.tween_callback(func() : EventsBus.emit_signal("defaite"))

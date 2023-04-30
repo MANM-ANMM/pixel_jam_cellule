@@ -3,6 +3,12 @@ extends Node2D
 
 @export var taille : Vector2
 @onready var tile_map :TileMapPuzzle= $TileMap
+var fini:=false
+var defaite:=false :
+	set(value):
+		defaite = value
+		if defaite:
+			fini = true
 
 func test_chemin(depart:Vector2i,arriver:Vector2i)->bool:
 	var deplacement_prec := Enums.Direction.Droite
@@ -29,18 +35,19 @@ func test_chemin(depart:Vector2i,arriver:Vector2i)->bool:
 
 var coord1 := Vector2i(-1,-1)
 func _on_tile_map_cell_clicked(pos:Vector2i):
-	if not((pos.x>-1 and pos.x<taille.x) and (pos.y>-1 and pos.y <taille.y)):
+	if fini or not((pos.x>-1 and pos.x<taille.x) and (pos.y>-1 and pos.y <taille.y)):
 		coord1 = Vector2i(-1,-1)
 		return
 	
 	if coord1 != Vector2i(-1,-1):
-		if tile_map.adjacence(pos,coord1):
+		if tile_map.adjacence(pos,coord1) and not tile_map.is_there_cell(pos):
 			tile_map.deplacer_cellule(coord1,pos)
 			EventsBus.emit_signal("piece_deplacee")
 			if tuyau_relier():
 				terminaison_niveau()
 			coord1 = Vector2i(-1,-1)
-			
+		else:
+			coord1 = pos
 	elif tile_map.is_there_cell(pos):
 		coord1 = pos
 		
@@ -60,6 +67,9 @@ func tuyau_relier()->bool:
 
 
 func terminaison_niveau():
+	if defaite:
+		return
+	fini = true
 	var tabdepart := tile_map.get_entrees_tubes()
 	var tween = get_tree().create_tween()
 	for dep in tabdepart:
@@ -75,7 +85,6 @@ func remplisagetube(depart:Vector2i, couleur:Enums.CouleurTube):
 	var tween = get_tree().create_tween()
 	
 	while true:
-		
 		tween.tween_interval(0.2)
 		var atlas_actuel := tile_map.get_cell_atlas_coords(0,case_actuelle)
 		if Constantes.atlas_coord_color.has(atlas_actuel): 

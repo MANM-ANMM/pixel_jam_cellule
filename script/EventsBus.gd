@@ -11,3 +11,4 @@ signal menu_quit_game
 signal level_ended
 signal piece_deplacee
 signal defaite
+signal vu_par_le_garde
