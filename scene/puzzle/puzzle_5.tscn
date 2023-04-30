@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciaextih7n42t"]
+
+[ext_resource type="PackedScene" uid="uid://c3cfvrluqwcpy" path="res://scene/puzzle.tscn" id="1_af13j"]
+
+[node name="puzzle5" instance=ExtResource("1_af13j")]
+
+[node name="TileMap" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(131071, 0, 3, 196607, 0, 2, 262143, 0, 1, 65540, 262144, 3, 196612, 262144, 1, 131076, 262144, 2, 131072, 131072, 2, 131075, 131072, 2, 0, 131072, 2, 1, 131072, 3, 2, 196608, 1, 3, 131072, 2, 65536, 196608, 1, 65539, 196608, 1, 65538, 65536, 3, 131073, 131072, 2, 131074, 131072, 2, 196611, 65536, 2, 196610, 65536, 1, 196608, 196608, 1)

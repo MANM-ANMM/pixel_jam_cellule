@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://ljoi6afxixoq"]
+[gd_scene load_steps=12 format=3 uid="uid://ljoi6afxixoq"]
 
 [ext_resource type="PackedScene" uid="uid://ds8r8k1wyujw0" path="res://scene/gardien.tscn" id="1_ggn0y"]
 [ext_resource type="Script" path="res://script/main.gd" id="1_sicp0"]
+[ext_resource type="PackedScene" uid="uid://djr73vajyy7gs" path="res://scene/puzzle/puzzle_6.tscn" id="2_7xlo8"]
 [ext_resource type="PackedScene" uid="uid://sikjig3mki1w" path="res://scene/puzzle/puzzle_2.tscn" id="2_cjuih"]
 [ext_resource type="Texture2D" uid="uid://c1ybe1syluq30" path="res://sprite/Fond.png" id="2_nf6qq"]
+[ext_resource type="PackedScene" uid="uid://ciaextih7n42t" path="res://scene/puzzle/puzzle_5.tscn" id="2_qqgcb"]
 [ext_resource type="PackedScene" uid="uid://32j4t25b006a" path="res://scene/puzzle/puzzle_3.tscn" id="3_kx11m"]
+[ext_resource type="PackedScene" uid="uid://b3aa57phx72qk" path="res://scene/puzzle/puzzle_4.tscn" id="3_uxuei"]
 [ext_resource type="Texture2D" uid="uid://cmnu6p8jrinjn" path="res://sprite/Grille.png" id="5_r47uq"]
 [ext_resource type="Texture2D" uid="uid://dj7bclg2hwofu" path="res://sprite/grille_simple.png" id="7_x88cd"]
 
@@ -13,7 +16,7 @@ size = Vector2(1000, 20)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_sicp0")
-levels_scenes = Array[PackedScene]([ExtResource("2_cjuih"), ExtResource("3_kx11m")])
+levels_scenes = Array[PackedScene]([ExtResource("3_uxuei"), ExtResource("2_7xlo8"), ExtResource("2_qqgcb"), ExtResource("3_kx11m"), ExtResource("2_cjuih")])
 
 [node name="Fond" type="Sprite2D" parent="."]
 position = Vector2(578.116, 345.5)

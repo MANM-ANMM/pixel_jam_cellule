@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djr73vajyy7gs"]
+
+[ext_resource type="PackedScene" uid="uid://c3cfvrluqwcpy" path="res://scene/puzzle.tscn" id="1_bdwob"]
+
+[node name="puzzle6" instance=ExtResource("1_bdwob")]
+
+[node name="TileMap" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(131071, 0, 3, 196612, 262144, 1, 131076, 262144, 3, 131073, 65536, 1, 196611, 131072, 2, 3, 131072, 3, 2, 65536, 3, 1, 196608, 1, 65535, 0, 1, 0, 196608, 1, 65536, 131072, 3, 196608, 65536, 2, 131072, 196608, 1, 131074, 65536, 2, 131075, 131072, 3, 196610, 131072, 1, 65537, 65536, 2)
