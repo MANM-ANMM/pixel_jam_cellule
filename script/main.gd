@@ -14,6 +14,7 @@ func _ready():
 func start_level():
 	if num_level >= levels_scenes.size():
 		print("Dernier niveau")
+		EventsBus.emit_signal("victoire")
 		return
 	
 	unload_level()

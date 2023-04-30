@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ljoi6afxixoq"]
+[gd_scene load_steps=13 format=3 uid="uid://ljoi6afxixoq"]
 
 [ext_resource type="PackedScene" uid="uid://ds8r8k1wyujw0" path="res://scene/gardien.tscn" id="1_ggn0y"]
 [ext_resource type="Script" path="res://script/main.gd" id="1_sicp0"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b3aa57phx72qk" path="res://scene/puzzle/puzzle_4.tscn" id="3_uxuei"]
 [ext_resource type="Texture2D" uid="uid://cmnu6p8jrinjn" path="res://sprite/Grille.png" id="5_r47uq"]
 [ext_resource type="Texture2D" uid="uid://dj7bclg2hwofu" path="res://sprite/grille_simple.png" id="7_x88cd"]
+[ext_resource type="Script" path="res://script/LabelTemps.gd" id="11_uw8pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_422si"]
 size = Vector2(1000, 20)
@@ -64,3 +65,23 @@ position = Vector2(187, 315)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneGarde"]
 position = Vector2(574.5, 297)
 shape = SubResource("RectangleShape2D_422si")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+
+[node name="LabelTemps" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "12.0"
+script = ExtResource("11_uw8pv")
