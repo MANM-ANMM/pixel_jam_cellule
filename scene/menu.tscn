@@ -15,3 +15,5 @@ menu_defaite = ExtResource("4_fp88h")
 menu_selection = ExtResource("5_sm7hd")
 
 [node name="AudioManager" parent="." instance=ExtResource("4_ylacp")]
+
+[node name="Timer" parent="." instance=ExtResource("6_6rykj")]
