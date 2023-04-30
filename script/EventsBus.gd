@@ -9,3 +9,5 @@ signal menu_quit_game
 
 #Jeu
 signal level_ended
+signal piece_deplacee
+signal defaite

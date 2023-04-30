@@ -36,6 +36,7 @@ func _on_tile_map_cell_clicked(pos:Vector2i):
 	if coord1 != Vector2i(-1,-1):
 		if tile_map.adjacence(pos,coord1):
 			tile_map.deplacer_cellule(coord1,pos)
+			EventsBus.emit_signal("piece_deplacee")
 			if tuyau_relier():
 				terminaison_niveau()
 			coord1 = Vector2i(-1,-1)

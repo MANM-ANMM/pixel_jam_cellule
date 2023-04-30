@@ -5,6 +5,7 @@ extends Node2D
 
 @onready var timer := $Timer
 @onready var sprite := $Icon
+@onready var audio_player := $AudioStreamPlayer2D
 
 func _ready():
 	timer.start(randf_range(5, 15))
@@ -27,12 +28,16 @@ func _on_timer_timeout():
 	position = deb
 	sprite.flip_h = deb.x > arret.x
 	sprite.play("default")
+	audio_player.play()
 	tween.tween_property(self, "position", arret, randf_range(2.0, 10.0))
 	tween.tween_callback(sprite.stop)
+	tween.tween_callback(audio_player.stop)
 	tween.tween_interval(randf_range(1.0, 3.0))
+	tween.tween_callback(audio_player.play)
 	tween.tween_callback(func():sprite.play("default"))
 	tween.tween_callback(func():sprite.flip_h = arret.x > arrivee.x)
 	tween.tween_property(self, "position", arrivee, 5.0)
+	tween.tween_callback(audio_player.stop)
 	tween.tween_callback(sprite.stop)
 
 	tween.tween_callback(func():timer.start(randf_range(5, 15.0)))
