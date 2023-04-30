@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://ljoi6afxixoq"]
 
-[ext_resource type="PackedScene" path="res://scene/gardien.tscn" id="1_ggn0y"]
+[ext_resource type="PackedScene" uid="uid://ds8r8k1wyujw0" path="res://scene/gardien.tscn" id="1_ggn0y"]
 [ext_resource type="Script" path="res://script/main.gd" id="1_sicp0"]
 [ext_resource type="PackedScene" uid="uid://sikjig3mki1w" path="res://scene/puzzle/puzzle_2.tscn" id="2_cjuih"]
 [ext_resource type="Texture2D" uid="uid://c1ybe1syluq30" path="res://sprite/Fond.png" id="2_nf6qq"]
-[ext_resource type="PackedScene" path="res://scene/puzzle/puzzle_3.tscn" id="3_kx11m"]
+[ext_resource type="PackedScene" uid="uid://32j4t25b006a" path="res://scene/puzzle/puzzle_3.tscn" id="3_kx11m"]
 [ext_resource type="Texture2D" uid="uid://cmnu6p8jrinjn" path="res://sprite/Grille.png" id="5_r47uq"]
 [ext_resource type="Texture2D" uid="uid://dj7bclg2hwofu" path="res://sprite/grille_simple.png" id="7_x88cd"]
 
@@ -18,7 +18,9 @@ scale = Vector2(0.254356, 0.254356)
 texture = ExtResource("2_nf6qq")
 
 [node name="gardien" parent="." instance=ExtResource("1_ggn0y")]
-position = Vector2(171, 271)
+position = Vector2(-199, 276)
+points_arrets = Array[NodePath]([NodePath("../position_gardien/ArretDroite"), NodePath("../position_gardien/ArretGauche")])
+points_extremes = Array[NodePath]([NodePath("../position_gardien/Gauche"), NodePath("../position_gardien/Droite")])
 
 [node name="Grille" type="Sprite2D" parent="."]
 position = Vector2(575.632, 263)
@@ -36,3 +38,17 @@ position = Vector2(384, 142)
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(584, 296)
 current = true
+
+[node name="position_gardien" type="Node2D" parent="."]
+
+[node name="Gauche" type="Marker2D" parent="position_gardien"]
+position = Vector2(-892, 315)
+
+[node name="Droite" type="Marker2D" parent="position_gardien"]
+position = Vector2(1892, 315)
+
+[node name="ArretDroite" type="Marker2D" parent="position_gardien"]
+position = Vector2(1043, 315)
+
+[node name="ArretGauche" type="Marker2D" parent="position_gardien"]
+position = Vector2(195, 315)
