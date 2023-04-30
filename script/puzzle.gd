@@ -37,7 +37,7 @@ func _on_tile_map_cell_clicked(pos:Vector2i):
 		if tile_map.adjacence(pos,coord1):
 			tile_map.deplacer_cellule(coord1,pos)
 			if tuyau_relier():
-				print("gagner")
+				terminaison_niveau()
 			coord1 = Vector2i(-1,-1)
 			
 	elif tile_map.is_there_cell(pos):
@@ -56,4 +56,7 @@ func tuyau_relier()->bool:
 		if not test_chemin(tabdepart[dep], tabarriver[dep]):
 			return false
 	return true
-	
+
+func terminaison_niveau():
+	print("gagner")
+	EventsBus.emit_signal("level_ended")

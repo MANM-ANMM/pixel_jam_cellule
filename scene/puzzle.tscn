@@ -6,10 +6,11 @@
 
 [node name="puzzle" type="Node2D"]
 script = ExtResource("1_mu6pg")
+taille = Vector2(4, 4)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
-scale = Vector2(4, 4)
+scale = Vector2(2.8, 2.8)
 tile_set = ExtResource("2_kxa6q")
 format = 2
 script = ExtResource("2_pmtmc")

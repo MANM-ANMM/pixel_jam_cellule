@@ -1,11 +1,9 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func avance_vers(depart:float, arrivee:float, temps:float):
+	position.x = depart
+	$Icon.flip_h = depart > arrivee
+	$Icon.play("default")
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", Vector2(arrivee, position.y), temps)
+	tween.tween_callback($Icon.stop)

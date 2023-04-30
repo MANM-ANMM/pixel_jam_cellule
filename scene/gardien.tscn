@@ -41,3 +41,5 @@ script = ExtResource("1_dha6r")
 position = Vector2(63, 0)
 sprite_frames = SubResource("SpriteFrames_a3odh")
 frame_progress = 0.0294082
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

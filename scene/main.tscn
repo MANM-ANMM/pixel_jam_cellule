@@ -1,21 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://ljoi6afxixoq"]
+[gd_scene load_steps=7 format=3 uid="uid://ljoi6afxixoq"]
 
 [ext_resource type="PackedScene" uid="uid://ds8r8k1wyujw0" path="res://scene/gardien.tscn" id="1_ggn0y"]
 [ext_resource type="Script" path="res://script/main.gd" id="1_sicp0"]
 [ext_resource type="PackedScene" uid="uid://sikjig3mki1w" path="res://scene/puzzle/puzzle_2.tscn" id="2_cjuih"]
 [ext_resource type="Texture2D" uid="uid://c1ybe1syluq30" path="res://sprite/Fond.png" id="2_nf6qq"]
+[ext_resource type="PackedScene" uid="uid://32j4t25b006a" path="res://scene/puzzle/puzzle_3.tscn" id="3_kx11m"]
+[ext_resource type="Texture2D" uid="uid://cmnu6p8jrinjn" path="res://sprite/Grille.png" id="5_r47uq"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_sicp0")
-levels_scenes = Array[PackedScene]([ExtResource("2_cjuih")])
-
-[node name="gardien" parent="." instance=ExtResource("1_ggn0y")]
-position = Vector2(-190, 271)
+levels_scenes = Array[PackedScene]([ExtResource("2_cjuih"), ExtResource("3_kx11m")])
 
 [node name="Fond" type="Sprite2D" parent="."]
 position = Vector2(578.116, 345.5)
 scale = Vector2(0.254356, 0.254356)
 texture = ExtResource("2_nf6qq")
 
+[node name="gardien" parent="." instance=ExtResource("1_ggn0y")]
+position = Vector2(171, 271)
+
+[node name="Grille" type="Sprite2D" parent="."]
+position = Vector2(561, 263)
+scale = Vector2(0.254, 0.254)
+texture = ExtResource("5_r47uq")
+
 [node name="SpawnPuzzle" type="Marker2D" parent="."]
-position = Vector2(224, 160)
+position = Vector2(384, 142)
+
+[node name="TimerGardien" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(584, 296)
+current = true
+
+[connection signal="timeout" from="TimerGardien" to="." method="_on_timer_gardien_timeout"]
