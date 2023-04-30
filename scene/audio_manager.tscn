@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhbtcroa2wxk6"]
+[gd_scene load_steps=4 format=3 uid="uid://dhbtcroa2wxk6"]
 
 [ext_resource type="Script" path="res://script/audio_manager.gd" id="1_50cx6"]
+[ext_resource type="AudioStream" uid="uid://i7qjuqqdktsv" path="res://son/vrai_dep_1.mp3" id="2_asbut"]
+[ext_resource type="AudioStream" uid="uid://doa8wuyge4bpd" path="res://son/vrai_dep_2.mp3" id="3_r1vf0"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_50cx6")
 
-[node name="Player" type="AudioStreamPlayer" parent="."]
+[node name="DeplacementPiece1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_asbut")
+
+[node name="DeplacementPiece2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_r1vf0")

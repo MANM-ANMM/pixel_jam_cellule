@@ -21,6 +21,10 @@ Enums="*res://script/enums.gd"
 Constantes="*res://script/constantes.gd"
 EventsBus="*res://script/EventsBus.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
