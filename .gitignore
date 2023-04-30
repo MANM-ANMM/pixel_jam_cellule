@@ -13,4 +13,5 @@ export_presets.cfg
 #Krita files
 *.kra
 *.png~
+*.kra~
 
