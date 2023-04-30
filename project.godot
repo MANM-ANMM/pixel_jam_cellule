@@ -18,6 +18,7 @@ config/icon="res://sprite/icon.svg"
 
 Enums="*res://script/enums.gd"
 Constantes="*res://script/constantes.gd"
+EventsBus="*res://script/EventsBus.gd"
 
 [rendering]
 
