@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c3cfvrluqwcpy" path="res://scene/puzzle.tscn" id="1_184qe"]
 
 [node name="puzzle1" instance=ExtResource("1_184qe")]
-taille = Vector2(4, 4)
 
 [node name="TileMap" parent="." index="0"]
 position = Vector2(-257, -256)
