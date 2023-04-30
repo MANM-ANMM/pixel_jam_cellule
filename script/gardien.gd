@@ -27,6 +27,7 @@ func _on_timer_timeout():
 	position = deb
 	sprite.flip_h = deb.x > arret.x
 	sprite.play("default")
+	
 	tween.tween_property(self, "position", arret, randf_range(2.0, 10.0))
 	tween.tween_callback(sprite.stop)
 	tween.tween_interval(randf_range(1.0, 3.0))
