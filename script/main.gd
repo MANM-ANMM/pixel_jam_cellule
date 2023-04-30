@@ -33,7 +33,3 @@ func unload_level():
 	level.queue_free()
 
 
-func _on_timer_gardien_timeout():
-	$gardien.avance_vers(-200, 171, 3.0)
-	
-	

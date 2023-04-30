@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ljoi6afxixoq"]
+[gd_scene load_steps=8 format=3 uid="uid://ljoi6afxixoq"]
 
 [ext_resource type="PackedScene" uid="uid://ds8r8k1wyujw0" path="res://scene/gardien.tscn" id="1_ggn0y"]
 [ext_resource type="Script" path="res://script/main.gd" id="1_sicp0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ybe1syluq30" path="res://sprite/Fond.png" id="2_nf6qq"]
 [ext_resource type="PackedScene" uid="uid://32j4t25b006a" path="res://scene/puzzle/puzzle_3.tscn" id="3_kx11m"]
 [ext_resource type="Texture2D" uid="uid://cmnu6p8jrinjn" path="res://sprite/Grille.png" id="5_r47uq"]
+[ext_resource type="Texture2D" uid="uid://dj7bclg2hwofu" path="res://sprite/grille_simple.png" id="7_x88cd"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_sicp0")
@@ -20,19 +21,18 @@ texture = ExtResource("2_nf6qq")
 position = Vector2(171, 271)
 
 [node name="Grille" type="Sprite2D" parent="."]
-position = Vector2(561, 263)
-scale = Vector2(0.254, 0.254)
+position = Vector2(575.632, 263)
+scale = Vector2(0.247682, 0.254)
 texture = ExtResource("5_r47uq")
+
+[node name="GrilleSimple" type="Sprite2D" parent="."]
+position = Vector2(563, 321)
+scale = Vector2(0.695312, 0.695312)
+texture = ExtResource("7_x88cd")
 
 [node name="SpawnPuzzle" type="Marker2D" parent="."]
 position = Vector2(384, 142)
 
-[node name="TimerGardien" type="Timer" parent="."]
-one_shot = true
-autostart = true
-
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(584, 296)
 current = true
-
-[connection signal="timeout" from="TimerGardien" to="." method="_on_timer_gardien_timeout"]
