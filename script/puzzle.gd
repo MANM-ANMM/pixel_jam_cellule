@@ -58,6 +58,44 @@ func tuyau_relier()->bool:
 			return false
 	return true
 
+
 func terminaison_niveau():
+	var tabdepart := tile_map.get_entrees_tubes()
+	var tween = get_tree().create_tween()
+	for dep in tabdepart:
+		remplisagetube(tabdepart[dep], dep)
+	tween.tween_interval(3)
 	print("gagner")
-	EventsBus.emit_signal("level_ended")
+	
+	tween.tween_callback(func() : EventsBus.emit_signal("level_ended"))
+
+func remplisagetube(depart:Vector2i, couleur:Enums.CouleurTube):
+	var deplacement_prec := Enums.Direction.Droite
+	var case_actuelle := depart + Enums.direction_to_vec(Enums.Direction.Droite)
+	var tween = get_tree().create_tween()
+	
+	while true:
+		
+		tween.tween_interval(0.2)
+		var atlas_actuel := tile_map.get_cell_atlas_coords(0,case_actuelle)
+		if Constantes.atlas_coord_color.has(atlas_actuel): 
+			var nouvel_atlas = Constantes.atlas_coord_color[atlas_actuel][couleur] 
+			tween.tween_callback(func() : tile_map.set_cell(0, case_actuelle, 1, nouvel_atlas))
+		
+		if Constantes.couleur_tube_sortie_id.has(tile_map.get_cell_atlas_coords(0, case_actuelle)) :
+			break
+		
+		var dirs := tile_map.get_directions_tube(case_actuelle)
+		if not dirs.has(Enums.direction_oposee(deplacement_prec)):
+			break
+		
+		dirs = dirs.filter(func(d): return d != Enums.direction_oposee(deplacement_prec))
+		if dirs.size() == 1:
+			case_actuelle += Enums.direction_to_vec(dirs.front())
+			deplacement_prec = dirs.front()
+		elif dirs.size() == 3:
+			case_actuelle += Enums.direction_to_vec(deplacement_prec)
+	
+	
+	
+	
