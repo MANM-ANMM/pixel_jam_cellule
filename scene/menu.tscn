@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3kri0i4fpqsh"]
+[gd_scene load_steps=9 format=3 uid="uid://c3kri0i4fpqsh"]
 
 [ext_resource type="Script" path="res://script/menu.gd" id="1_pl2vk"]
 [ext_resource type="PackedScene" uid="uid://dju066jd31b83" path="res://scene/menus/menu_principal.tscn" id="2_yh5i6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scene/menus/menu_defaite.tscn" id="4_fp88h"]
 [ext_resource type="PackedScene" uid="uid://dhbtcroa2wxk6" path="res://scene/audio_manager.tscn" id="4_ylacp"]
 [ext_resource type="PackedScene" uid="uid://dfdobt50pi8vc" path="res://scene/menus/menu_selection.tscn" id="5_sm7hd"]
+[ext_resource type="PackedScene" uid="uid://xg8vfib75138" path="res://scene/menus/menu_victoire.tscn" id="6_aay1h"]
 [ext_resource type="PackedScene" uid="uid://daaau3b5ashj1" path="res://scene/timerPuzzle.tscn" id="7_47mbu"]
 
 [node name="menu" type="CanvasLayer"]
@@ -14,6 +15,7 @@ menu_principal = ExtResource("2_yh5i6")
 main_jeu = ExtResource("3_iujm8")
 menu_defaite = ExtResource("4_fp88h")
 menu_selection = ExtResource("5_sm7hd")
+menu_victoire = ExtResource("6_aay1h")
 
 [node name="AudioManager" parent="." instance=ExtResource("4_ylacp")]
 

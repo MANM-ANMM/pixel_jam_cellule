@@ -5,6 +5,7 @@ extends CanvasLayer
 @export var main_jeu : PackedScene
 @export var menu_defaite : PackedScene
 @export var menu_selection : PackedScene
+@export var menu_victoire : PackedScene
 
 var scene_actuelle : Node
 
@@ -16,6 +17,7 @@ func _ready():
 	EventsBus.connect("menu_start_game", start_game)
 	EventsBus.connect("menu_quit_game", quit_game)
 	EventsBus.connect("start_level", start_specific_level)
+	EventsBus.connect("victoire", go_to_victoire)
 	go_to_main()
 
 func decharger_menu():
@@ -31,6 +33,9 @@ func charger_menu(scn:PackedScene):
 	decharger_menu()
 	scene_actuelle = scn.instantiate()
 	add_child(scene_actuelle)
+
+func go_to_victoire():
+	charger_menu(menu_victoire)
 
 func go_to_main():
 	charger_menu(menu_principal)

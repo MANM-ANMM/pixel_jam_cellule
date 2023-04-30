@@ -14,7 +14,7 @@ grow_vertical = 2
 theme = ExtResource("1_7o4tv")
 script = ExtResource("2_fo5s4")
 jouer_button = NodePath("VBoxContainer/Jouer")
-credit_button = NodePath("VBoxContainer/Credit")
+credit_button = NodePath("")
 quitter_button = NodePath("VBoxContainer/Quitter")
 selection_button = NodePath("VBoxContainer/Selection")
 
@@ -42,7 +42,7 @@ theme_override_constants/separation = 10
 
 [node name="Titre" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Titre"
+text = "Gardien Taquin"
 horizontal_alignment = 1
 
 [node name="Jouer" type="Button" parent="VBoxContainer"]
@@ -52,10 +52,6 @@ text = "Jouer"
 [node name="Selection" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Selection"
-
-[node name="Credit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Crédit"
 
 [node name="Quitter" type="Button" parent="VBoxContainer"]
 layout_mode = 2

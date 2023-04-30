@@ -8,6 +8,5 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	jouer_button.connect("pressed", func(): EventsBus.emit_signal("menu_start_game"))
-	credit_button.connect("pressed", func(): EventsBus.emit_signal("menu_go_to_credit"))
 	quitter_button.connect("pressed", func(): EventsBus.emit_signal("menu_quit_game"))
 	selection_button.connect("pressed", func(): EventsBus.emit_signal("menu_go_to_selection"))
